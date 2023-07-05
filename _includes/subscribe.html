@@ -1,0 +1,13 @@
+{%- assign _paths_rss = si
+    
+    te.paths.rss | default: site.data.variables.default.paths.rss -%}
+{%- include snippets/get-nav-url.html path=_paths_rss -%}
+{%- assign _paths_rss = __return -%}
+{%- include snippets/get-locale-string.html key='SUBSCRIBE' -%}
+{%- assign _locale_nav_subscribe = __return -%}
+
+{%- assign _show_subscribe = __return -%}
+{%- if _show_subscribe -%}
+<i class="fas fa-rss subscribe"></i> <a type="application/rss+xml" href="{{ _paths_rss }}">{{ _locale_nav_subscribe }}</a>
+{%- endif -%}
+

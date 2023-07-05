@@ -1,0 +1,7 @@
+{%- include snippets/get-locale-string.html key='LICENSE_ANNOUNCE' -%}
+{%- assign _license_announce = __return -%}
+{%- assign _data_license = site.data.licenses-%}
+{%- assign _license_data = _data_license[site.license] -%}
+
+{%-assign _license_name = '<a itemprop="license" rel="license" href="[URL]">[NAME]</a>' | replace: "[URL]", _license_data["url"] | replace: "[NAME]", _license_data["name"] -%}
+<span class="license">{{ _license_announce | replace: "[LICENSE]", _license_name }}</span>
