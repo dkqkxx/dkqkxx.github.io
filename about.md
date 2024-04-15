@@ -16,3 +16,5 @@ import base64
 mail = base64.b64decode("ZGtxa3h4QGdtYWlsLmNvbQ==")
 print(mail.decode())
 ```
+
+![image](wechat.png)
